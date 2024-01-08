@@ -1,0 +1,43 @@
+<!-- views/dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <h2>User Playlists:</h2>
+  <ul>
+    <% playlists.forEach(async playlist => { %>
+      <li>
+        <strong><%= playlist.name %></strong>
+        <% try {
+          const accessToken = await getAccessToken(); // Obtain the access token
+          const tracksResponse = await fetch(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks`, {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+
+          if (!tracksResponse.ok) {
+            throw new Error(`Error fetching track information: ${tracksResponse.statusText}`);
+          }
+
+          const tracksData = await tracksResponse.json();
+          const totalTracks = tracksData.total;
+        %>
+        - <%= totalTracks %> tracks
+        <button onclick="playPlaylist('<%= playlist.id %>')">Play</button>
+        <% } catch (error) { %>
+          - <%= error.message %>
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script src="/public/js/dashboard.js"></script>
+</body>
+</html>
