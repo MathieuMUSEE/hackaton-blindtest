@@ -29,8 +29,17 @@ body {
 
 #submitButton {
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Increased padding for better aesthetics */
   cursor: pointer;
+  background-color: #3498db; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+#submitButton:hover {
+  background-color: #2980b9; /* Darker blue color on hover */
 }
 
 #message {
@@ -54,19 +63,22 @@ body {
 /* Media query pour les écrans plus petits (par exemple, mobile) */
 @media screen and (max-width: 600px) {
   #logo {
-      width: 70%;
-      max-width: none;
-      margin-left: 58px;
+    width: 70%;
+    max-width: none;
+    margin-left: 58px;
   }
 
   #pinInput {
-      font-size: 16px;
-      padding: 8px;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 30px;
   }
 
   #submitButton {
-      font-size: 14px;
-      padding: 8px 16px;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 10px;
+
   }
 }
 
@@ -80,5 +92,3 @@ a {
 a:hover {
   color: #0056b3; /* Nouvelle couleur du texte du lien au survol */
 }
-
-
