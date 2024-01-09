@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buzz Button</title>
+  <link rel="stylesheet" href="../assets/css/buzzer.css">
+</head>
+<body >
+    <button class="Btn" onclick="handleButtonClick()" id="myButton">
+        BUZZ
+        </button>
+        <audio id="buzzerSound">
+          <source src="../assets/images/sound.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+        <script>
+          function handleButtonClick() {
+            document.getElementById('myButton').disabled = true;
+            var audio = document.getElementById('buzzerSound');
+            audio.play();
+          }
+        </script>
+</body>
+</html>

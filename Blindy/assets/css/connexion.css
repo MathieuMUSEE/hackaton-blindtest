@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+#cardContainer {
+  text-align: center;
+  margin-top: 100px;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#pinContainer {
+  text-align: center;
+}
+
+#pinInput {
+  font-size: 20px;
+  padding: 10px;
+}
+
+#submitButton {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 20px;
+  color: white;
+}
+
+#logo {
+  width: 200px;
+  margin-left: 43%;
+  margin-top: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#cardContainer img {
+  width: 50px;
+}
+
+/* Media query pour les écrans plus petits (par exemple, mobile) */
+@media screen and (max-width: 600px) {
+  #logo {
+      width: 70%;
+      max-width: none;
+      margin-left: 58px;
+  }
+
+  #pinInput {
+      font-size: 16px;
+      padding: 8px;
+  }
+
+  #submitButton {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+a {
+  color: white; /* Couleur de base du texte du lien */
+  text-decoration: none; /* Supprime le soulignement par défaut du lien */
+  transition: color 0.3s; /* Animation de transition pour une expérience utilisateur fluide */
+}
+
+/* Style du lien au survol */
+a:hover {
+  color: #0056b3; /* Nouvelle couleur du texte du lien au survol */
+}
+
+
